@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../vendors/css/normalize.css">
+    <link rel="stylesheet" type="text/css" href="../vendors/css/grid.css">
+    <link rel="stylesheet" type="text/css" href="../resources/css/style.css">
+    <link rel="stylesheet" type="text/css" href="../resources/css/queries.css">
+    <link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,300italic&subset=latin,latin-ext' rel='stylesheet'
+        type='text/css'>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz"
+        crossorigin="anonymous">
+
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/4.4.1/collection/icon/icon.css" rel="stylesheet" type="text/css" />
+
+    <title>WeConnect</title>
+</head>
+
+<body>
+    <div id="home" class="updatesheader">
+        <nav>
+            <div class="row">
+                    <img src="../resources/img/wc.png" alt="logo" class="logo" style="color:black">
+                <ul class="main-nav js--main-nav">
+                    <li><a href="/" class="close">Home</a></li>
+                </ul>
+                <a class="mobile-nav-icon js--nav-icon"><i class="fas fa-bars"></i></a>
+
+            </div>
+        </nav>
+        <div style="width:80%;margin:60px auto;text-align:center">
+            <%a.forEach(function(m){%>
+            <div style="margin-top:30px;">
+
+                <h2 style="color:white;margin: 15px auto;font-size:20px;">
+                    <%=m.update_info%>
+                </h2>
+                <p style="color:white;font-size: 25px;font-style: italic">
+                    updated by - &nbsp;<%=m.fname%> &nbsp; <%=m.lname%> 
+
+                </p>
+                <a href="/likes/<%=m.update_id%>" class="btn btn-full" style="margin-left:110px;">Like</a>
+                <span>
+                    <h3>
+                        <%=m.total_likes%>
+                    </h3>
+                </span>
+            </div>
+            <% })%>
+        </div>
+    </div>
+
+</body>
+
+</html>

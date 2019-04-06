@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../vendors/css/normalize.css">
+    <link rel="stylesheet" type="text/css" href="../vendors/css/grid.css">
+    <link rel="stylesheet" type="text/css" href="../resources/css/style.css">
+    <link rel="stylesheet" type="text/css" href="../resources/css/queries.css">
+    <link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,300italic&subset=latin,latin-ext' rel='stylesheet'
+        type='text/css'>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz"
+        crossorigin="anonymous">
+
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/4.4.1/collection/icon/icon.css" rel="stylesheet" type="text/css" />
+
+    <title>Weconnect</title>    <style>
+        #divshow{
+        display: none;
+    }
+    </style>
+</head>
+
+<body>
+    <header id="home" class="profilemain">
+        <nav>
+            <div class="row">
+                    <img src="../resources/img/wc.png" alt="logo" class="logo" style="color:black">
+                <ul class="main-nav js--main-nav">
+                    <li>
+                        <form action="/findfriendskill" method="post">
+                            <input name="skill" type="text" placeholder="Search By Skill" style="opacity:0.4">
+                        </form>
+                    </li>
+                    <li><a href="/" class="close">Home</a></li>
+                    <li><a href="/updates" class="close">Updates</a></li>
+                    <li><a href="#" class="close">
+                            <%=currentUser.username%></a></li>
+                    <li><a href="/logout" class="close">Log &nbsp; Out</a></li>
+                </ul>
+                <a class="mobile-nav-icon js--nav-icon"><i class="fas fa-bars"></i></a>
+            </div>
+        </nav>
+        <div style="margin-top:50px;width: 95%;margin: 20px auto;">
+            <div class="col span-3-of-5  boxprofile" style="opacity:0.9;height: 400px;color:white">
+                <img src=<%=a.url%> alt="customer" class="profilepic">
+                <h3>Name:- &nbsp;
+                    <%=a.fname%> <%=a.lname%>
+                </h3>
+                <p>
+                        <h3>
+                        Email id:- &nbsp;
+                        <%=a.email%></h3>
+                        <h3>Phone Number:- &nbsp; <%=a.phone%></h3>
+                        <h3>About:- &nbsp; <%=a.bio%></h3>
+                    <a href="/addskill" class="btn btn-full" style="margin-left:150px">Add Skill</a>
+                    <a href="/addupdate" class="btn btn-full" style="margin-left:150px">Add Update</a>
+                    <a href="/updatebio" class="btn btn-full" style="margin-left:150px">Update Bio</a>
+                    <a href="/deleteaccount" class="btn btn-full" style="margin-left:150px">Delete Account</a>
+                </p>
+
+            </div>
+            <div class="col span-2-of-5" style="background-color:black;height: 400px;opacity: 0.5;color:white">
+                <h2>Search Your Friend ...</h2>
+                <form method="POST" action="/findfriend" class="contact">
+                    <div class="row">
+                        <div class="col span-1-of-3">
+                            <label for="fname" style="color:white">First Name</label>
+                        </div>
+                        <div class="col span-2-of-3">
+                            <input type="text" name="fname" id="fname" placeholder="First Name" width="100%">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col span-1-of-3">
+                            <label for="lname" style="color:white">Last Name</label>
+                        </div>
+                        <div class="col span-2-of-3">
+                            <input type="text" name="lname" id="lname" placeholder="Last Name" width="100%">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col span-1-of-3">
+                            <label for="email" style="color:white">Email</label>
+                        </div>
+                        <div class="col span-2-of-3">
+                            <input type="email" name="email" id="email" placeholder="Email" width="100%">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col span-1-of-3">
+                            <label for="phone" style="color:white">Phone</label>
+                        </div>
+                        <div class="col span-2-of-3">
+                            <input type="text" name="phone" id="phone" placeholder="Your Conatact Number" width="100%">
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col span-1-of-3">
+                            <label>&nbsp;</label>
+                        </div>
+                        <div class="col span-2-of-3">
+                            <input type="submit" value="Send it!" class="btn btn-full pointer" style="margin-left:120px;">
+                        </div>
+                    </div>
+                    <input type="text" name="_gotcha" style="display:none" />
+                    <input type="hidden" name="_next" value="https://site.io/thanks.html" />
+                </form>
+            </div>
+        </div>
+    </header>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script>
+        $('#show').on('click', function () {
+            $('#divshow').show();
+            $('#show').hide();
+
+        })
+
+        $('#close1').on('click', function () {
+            $('.center').hide();
+        })
+    </script>
+</body>
+
+</html>

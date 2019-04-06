@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../vendors/css/normalize.css">
+    <link rel="stylesheet" type="text/css" href="../vendors/css/grid.css">
+    <link rel="stylesheet" type="text/css" href="../resources/css/style.css">
+    <link rel="stylesheet" type="text/css" href="../resources/css/queries.css">
+    <!-- <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" /> -->
+    <link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,300italic&subset=latin,latin-ext' rel='stylesheet'
+        type='text/css'>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz"
+        crossorigin="anonymous">
+
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/4.4.1/collection/icon/icon.css" rel="stylesheet" type="text/css" />
+
+    <title>Weconnect</title>
+    <style>
+        * {
+            box-sizing: border-box
+        }
+
+        /* Slideshow container */
+        .slideshow-container {
+            height: 500px;
+            position: relative;
+            margin: auto;
+        }
+
+        .mySlides {
+            display: none;
+        }
+
+        /* Next & previous buttons */
+        .prev,
+        .next {
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            width: auto;
+            margin-top: -22px;
+            padding: 16px;
+            color: white;
+            font-weight: bold;
+            font-size: 18px;
+            transition: 0.6s ease;
+            border-radius: 0 20px 20px 0;
+        }
+
+        /* Position the "next button" to the right */
+        .next {
+            right: 0;
+            border-radius: 20px 0 0 20px;
+        }
+
+        /* On hover, add a black background color with a little bit see-through */
+        .prev:hover,
+        .next:hover {
+            background-color: rgba(0, 0, 0, 0.4);
+        }
+
+        /* The dots/bullets/indicators */
+        .dot {
+            cursor: pointer;
+            height: 13px;
+            width: 13px;
+            margin: 0 2px;
+            background-color: #bbb;
+            border-radius: 50%;
+            display: inline-block;
+            transition: background-color 0.6s ease;
+        }
+
+        .active,
+        .dot:hover {
+            background-color: #717171;
+        }
+
+        /* Fading animation */
+        .fade {
+            -webkit-animation-name: fade;
+            -webkit-animation-duration: 1.5s;
+            animation-name: fade;
+            animation-duration: 1.5s;
+        }
+
+        @-webkit-keyframes fade {
+            from {
+                display: block;
+            }
+
+            to {
+                margin: 0;
+            }
+        }
+
+        @keyframes fade {
+            from {
+                opacity: .4
+            }
+
+            to {
+                opacity: 1
+            }
+        }
+
+        .full {
+
+            width: 100vw;
+
+        }
+        .center {
+    position: absolute;
+    background-color:black;
+    opacity: 0.9;
+    top:250px;
+    left: 790px;
+    margin: auto;
+    width: 40%;
+    padding: 20px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    display: none;
+    animation: moveInRight 1s;
+}
+.center1 {
+    position: absolute;
+    text-transform: uppercase;
+    top:230px;
+    left: 20px;
+    margin: auto;
+    width: 40%;
+    padding: 20px;
+    color: white;
+
+}
+.center1_a{
+    font-size: 50px;
+    margin-bottom: 30px;
+    text-align: center;
+    letter-spacing: 1px;
+    font-weight: 400;
+    animation: moveInLeft 2s;
+}
+.center1_b{
+    font-weight: 400;
+    letter-spacing: 1px;
+    text-align: center;
+    animation: moveInRight 2s;
+}
+#close1 {
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  width: 32px;
+  height: 32px;
+  opacity: 0.5;
+}
+#close1:hover {
+  opacity: 1;
+}
+#close1:before, #close1:after {
+  position: absolute;
+  left: 15px;
+  content: ' ';
+  height: 33px;
+  width: 2px;
+  background-color: #fff;
+}
+#close1:before {
+  transform: rotate(45deg);
+}
+#close1:after {
+  transform: rotate(-45deg);
+}
+
+@keyframes moveInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-200px); }
+  80% {
+    transform: translateX(10px); }
+  100% {
+    opacity: 1;
+    transform: translateX(0); } }
+
+@keyframes moveInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(200px); }
+  80% {
+    transform: translateX(-10px); }
+  100% {
+    opacity: 1;
+    transform: translateX(0); } }
+
+    </style>
+</head>
+
+<body>
+    <header id="home">
+        <nav>
+            <div class="row">
+                <img src="../resources/img/wc.png" alt="logo" class="logo" style="color:black">
+                <ul class="main-nav js--main-nav">
+
+                    <%if(!currentUser){%>
+                    <li><a href="#home" class="close">Home</a></li>
+                    <li><a href="#events" class="close">Events</a></li>
+                    <li><a href="/updates" class="close">Updates</a></li>
+                    <li><a href="#our-services" class="close">Our &nbsp; Services</a></li>
+                    <li><a href="#meet-the-team" class="close">Meet &nbsp; The &nbsp; Team</a></li>
+                    <li><a href="/sign-up" class="close">Sign &nbsp; Up</a></li>
+                    <li><span href="" class="close" id="show" style="color:white;cursor:pointer">Log &nbsp; In</span></li>
+                    <%}else{%>
+                    <li><a href="#home" class="close">Home</a></li>
+                    <li><a href="#events" class="close">Events</a></li>
+                    <li><a href="/updates" class="close">Updates</a></li>
+                    <li><a href="#our-services" class="close">Our &nbsp; Services</a></li>
+                    <li><a href="#meet-the-team" class="close">Meet &nbsp; The &nbsp; Team</a></li>
+                    <li><a href="#">
+                            <%=currentUser.username%></a></li>
+
+                    <li><a href="/logout">Log Out</a></li>
+                    <%}%>
+                </ul>
+                <a class="mobile-nav-icon js--nav-icon"><i class="fas fa-bars"></i></a>
+
+
+                <!-- <p class="main-heading">wallstreet &nbsp; media &nbsp; house </p> -->
+            </div>
+        </nav>
+    </header>
+
+
+    
+
+
+    <div class="row" class="our-services">
+        <h2>
+            Our &nbsp; Services
+        </h2>
+    </div>
+    <div class="slideshow-container" id="our-services">
+        <div class="mySlides fade full">
+            <div style="background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+            url(../resources/img/gd.jpg);
+          background-position: center;
+          background-size: cover;
+          height: 500px;">
+
+                <h1 class="h1slide">Get Updates and post Updates</h1>
+                <br>
+
+                <p class="long-careers ">
+                   All the updates regarding the events going on in a college is given to all of users and any user an post any new updates which can help others.
+                </p>
+                
+            </div>
+        </div>
+
+        <div class="mySlides fade full">
+            <div style="background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+            url(../resources/img/gallery2.jpg);
+          background-position: center;
+          background-size: cover;
+          height: 500px; ">
+                <h1 class="h1slide">Search anyone</h1>
+                <br>
+
+                <p class="long-careers ">
+                   Any user who is logged in to our website can search any other user based on his skills
+                   ,name,email id and phone number so that everyone are benefited.
+                </p>
+               
+            </div>
+        </div>
+
+        <div class="mySlides fade full">
+            <div style="background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+            url(../resources/img/gallery22.jpg);
+          background-position: center;
+          background-size: cover;
+          height: 500px;">
+                <h1 class="h1slide">Build your career</h1>
+                <br>
+
+                <p class="long-careers ">
+                    Conact people who are good at your domain through our website, get updates regularly and build up your career.
+                </p>
+            </div>
+        </div>
+
+
+
+        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+        <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+
+
+    </div>
+
+    <br>
+    <div style="text-align:center">
+        <span class="dot" onclick="currentSlide(1)"></span>
+        <span class="dot" onclick="currentSlide(2)"></span>
+        <span class="dot" onclick="currentSlide(3)"></span>
+        <!-- <span class="dot" onclick="currentSlide(4)"></span> -->
+    </div>
+
+    <section class="meet-the-team" id="events" style="background-color: black;">
+            <div class="row">
+                <h2 style="color: #fff">
+                    Events
+                </h2>
+    
+            </div>
+            <div class="row" style="width:100%">
+                <div data-aos="fade-right"
+                data-aos-duration="1000">
+                        <div class="col span-1-of-3 box box2">
+                                <img src="../resources/img/maaya.png" style="width:300px;height:200px;text-align: center">
+                                <a class="btn btn-full" href="/events/1"> View more </a> 
+                            </div>
+                </div>
+                <div data-aos="fade-up"
+                data-aos-duration="1000">
+                <div class="col span-1-of-3 box box2">
+                    <img src="../resources/img/ingenius.png" style="width:300px;height:200px;text-align: center">
+                    <a class="btn btn-full" href="/events/2"> View more </a>
+                </div>
+                </div>
+                <div data-aos="fade-left"
+                data-aos-duration="1000">
+                <div class="col span-1-of-3 box box2">
+                    <img src="../resources/img/tedx.png" style="width:300px;height:200px;text-align: center">
+                    <a class="btn btn-full" href="/events/3"> View more</a>
+                </div>
+                </div>
+    
+            </div>
+    
+        </section>
+
+    <section class="meet-the-team" id="meet-the-team">
+        <div class="row">
+            <h2>
+                Meet &nbsp; the &nbsp; team
+            </h2>
+
+        </div>
+        <div class="row" style="width:90%">
+                
+            <div class="col span-1-of-2 box box1">
+
+                <img src="../resources/img/Nithin.jpg" alt="customer" class="team">
+                <h3>
+                    Nithin Kumar H V
+                </h3>
+                <p>
+                    <strong>DEVELOPER</strong><br>Student studying Computer Science and Engineering at PES University Electronic city campus. Web Developer, designer and a Tennis player.<br>
+                   
+                </p>
+            </div>
+        
+        
+            <div class="col span-1-of-2 box box1">
+                <img src="../resources/img/nikhil1.jpeg" alt="customer" class="team">
+                <h3>
+                    Nikhil Yadav
+                </h3>
+                <strong>DEVELOPER</strong><br>
+                <p>
+                    Student studying Computer Science and Engineering at PES University Electronic city campus. A full stack Web Developer.<br>
+                    
+
+                </p>
+            </div>
+            
+
+            <!-- <span class="btn btn-full pointer">Read More</span> -->
+        </div>
+    </section>
+
+    
+
+
+
+    <footer>
+        <div class="row">
+
+        </div>
+        <div class="row">
+
+            <div class="col span-1-of-2">
+
+                <ul class="footer-nav">
+                    <li><a href="#home">home</a></li>
+                    <li><a href="/updates">updates</a></li>
+                    <li><a href="#events">events</a></li>
+                </ul>
+            </div>
+            <div class="col span-1-of-2">
+                
+                <!-- <ul class="social-links">
+                    <li><a href="">
+                            <img src="resources/img/facebook.png" />
+                        </a></li>
+                    <li><a><img src="resources/img/instagram.png" style="color:white" /></a></li>
+                </ul> -->
+            </div>
+        </div>
+        <div class="row">
+            <p>
+                Copyright &copy; 2018 by WE CONNECT PVT.LTD.
+            </p>
+        </div>
+
+    </footer>
+    <div class="center">
+        <span id="close1"></span>
+        <form method="POST" action="/login" class="contact">
+            <div class="row">
+                <div class="col span-1-of-3">
+                    <label for="email" style="font-size:25px;color: #fff">Email</label>
+                </div>
+                <div class="col span-2-of-3">
+                    <input type="email" name="username" id="email" placeholder="Your email" required>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col span-1-of-3">
+                    <label for="password" style="font-size:25px;color: #fff">Password</label>
+                </div>
+                <div class="col span-2-of-3">
+                    <input type="password" name="password" id="password" placeholder="Your Password" required>
+                </div>
+            </div>
+
+
+            <div class="row">
+                <div class="col span-1-of-3">
+                    <label>&nbsp;</label>
+                </div>
+                <div class="col span-2-of-3">
+                    <input type="submit" value="Log In" class="btn btn-full pointer">
+                </div>
+            </div>
+            <input type="text" name="_gotcha" style="display:none" />
+            <input type="hidden" name="_next" value="https://site.io/thanks.html" />
+        </form>
+    </div>
+
+    <div class="center1">
+        <div class="center1_a">
+            we &nbsp; connect &nbsp; everyone
+        </div>
+        <div class="center1_b">
+            Together &nbsp; we &nbsp; grow 
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="../vendors/js/jquery.waypoints.min.js"></script>
+    <script src="../resources/js/script.js"></script>
+    <script src="../resources/js/smooth-scroll.js"></script>
+    <script>
+        var x = document.getElementById("my-file").value;
+        console.log(x)
+    </script>
+    <!-- <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+
+
+
+    <script>
+            AOS.init();
+    </script> -->
+    <script>
+        $('#show').on('click', function () {
+            $('.center').show();
+
+        })
+
+        $('#close1').on('click', function () {
+            $('.center').hide();
+        })
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../vendors/css/normalize.css">
+    <link rel="stylesheet" type="text/css" href="../vendors/css/grid.css">
+    <link rel="stylesheet" type="text/css" href="../resources/css/style.css">
+    <link rel="stylesheet" type="text/css" href="../resources/css/queries.css">
+    <link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,300italic&subset=latin,latin-ext' rel='stylesheet'
+        type='text/css'>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz"
+        crossorigin="anonymous">
+
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/4.4.1/collection/icon/icon.css" rel="stylesheet" type="text/css" />
+
+    <title>Weconnect</title></head>
+
+<body>
+    <header id="home" class="profilemain">
+        <nav>
+            <div class="row">
+                    <img src="../resources/img/wc.png" alt="logo" class="logo" style="color:black">
+                <ul class="main-nav js--main-nav">
+                    <li>
+                        <form action="/findfriendskill" method="post">
+                            <input name="skill" type="text" placeholder="Search By Skill" style="opacity:0.4">
+                        </form>
+                    </li>
+                    <li><a href="/" class="close">Home</a></li>
+
+                    <li><a href="#" class="close">
+                            <%=currentUser.username%></a></li>
+                    <li><a href="/logout" class="close">Log &nbsp; Out</a></li>
+                </ul>
+                <a class="mobile-nav-icon js--nav-icon"><i class="fas fa-bars"></i></a>
+            </div>
+        </nav>
+        <div style="margin-top:50px;width: 95%;margin: 20px auto;">
+            <div class="col span-3-of-5 " style="opacity:0.9;height: 400px;color: white;margin: 75px auto">
+
+
+                <form method="POST" action="/addupdate" class="contact">
+                    <div class="row">
+                        <div class="col span-1-of-3">
+                            <label for="update" style="color:white">Update</label>
+                        </div>
+                        <div class="col span-2-of-3">
+                            <input type="text" name="update" id="update" placeholder="Enter New Update" width="100%">
+                        </div>
+                    </div>
+
+
+                    <div class="row">
+                        <div class="col span-1-of-3">
+                            <label>&nbsp;</label>
+                        </div>
+                        <div class="col span-1-of-3">
+                            <input type="submit" value="Send it!" class="btn btn-full pointer" style="margin-left:60px;">
+                        </div>
+                        <div class="col span-1-of-3">
+                            <a href="/profile/<%=currentUser.username%>" class="btn btn-full">Done!</a>
+                        </div>
+                    </div>
+                    <input type="text" name="_gotcha" style="display:none" />
+                    <input type="hidden" name="_next" value="https://site.io/thanks.html" />
+                </form>
+
+            </div>
+            <div class="col span-2-of-5" style="background-color:black;height: 400px;opacity: 0.5;color:white">
+                <h2>Search Your Friend ...</h2>
+                <form method="POST" action="/findfriend" class="contact">
+                    <div class="row">
+                        <div class="col span-1-of-3">
+                            <label for="fname" style="color:white">First Name</label>
+                        </div>
+                        <div class="col span-2-of-3">
+                            <input type="text" name="fname" id="fname" placeholder="First Name" width="100%">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col span-1-of-3">
+                            <label for="lname" style="color:white">Last Name</label>
+                        </div>
+                        <div class="col span-2-of-3">
+                            <input type="text" name="lname" id="lname" placeholder="Last Name" width="100%">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col span-1-of-3">
+                            <label for="email" style="color:white">Email</label>
+                        </div>
+                        <div class="col span-2-of-3">
+                            <input type="email" name="email" id="email" placeholder="Email" width="100%">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col span-1-of-3">
+                            <label for="phone" style="color:white">Phone</label>
+                        </div>
+                        <div class="col span-2-of-3">
+                            <input type="text" name="phone" id="phone" placeholder="Your Conatact Number" width="100%">
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col span-1-of-3">
+                            <label>&nbsp;</label>
+                        </div>
+                        <div class="col span-2-of-3">
+                            <input type="submit" value="Send it!" class="btn btn-full pointer" style="margin-left:60px;">
+                        </div>
+                    </div>
+                    <input type="text" name="_gotcha" style="display:none" />
+                    <input type="hidden" name="_next" value="https://site.io/thanks.html" />
+                </form>
+            </div>
+        </div>
+    </header>
+
+</body>
+
+</html>

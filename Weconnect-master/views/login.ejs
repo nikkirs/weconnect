@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>NikConnect</title>
+	<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+	<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+	<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+	<style>
+		.focus-t span {
+			bottom: 36px !important;
+			;
+			color: #d74141;
+			font-size: 15px;
+			transition: all 0.3s ease 0s;
+			z-index: 1;
+		}
+
+		.focus-t input:focus {
+			border-color: #d74141;
+		}
+
+		.text-effect input {
+			border: none;
+			border-bottom: 2px solid #073951 !important;
+			border-radius: 0;
+			position: absolute;
+			bottom: 0;
+			border-style: none none solid;
+			border-width: 0 0 2px;
+			box-shadow: none;
+			z-index: 2;
+			background-color: transparent;
+		}
+
+		.form-control:focus {
+			border-bottom: 2px solid #073951 !important;
+			box-shadow: none;
+			outline: 0 none;
+			transition: 0.6s;
+		}
+
+		.text-effect {
+			position: relative;
+			height: 70px;
+		}
+
+		.text-effect span {
+			bottom: 3px;
+			position: absolute;
+			z-index: 1;
+		}
+	</style>
+</head>
+
+<body>
+
+
+	<div class="row">
+		<div class="col-lg-9">
+			<img src="https://www.hdwallpapers.in/download/cute_little_baby_girl-wide.jpg" height="100%" width="100%">
+		</div>
+		<div class="col-lg-3">
+			<div style="text-align: center;margin-top: 100px;margin-bottom: 120px">
+				<h1>Login</h1>
+			</div>
+			<form action="/login" method="post">
+				<div class="form-group">
+					<div class="text-effect">
+						<span>Email</span>
+						<input type="email" name="username" class="form-control focus-text" />
+					</div>
+					<!-- <input class="effect-1" type="email" name="username" placeholder="email" /> -->
+
+				</div>
+				<div class="form-group">
+					<div class="text-effect">
+						<span>Password</span>
+						<input type="password" name="password" class="form-control focus-text" />
+					</div>
+
+				</div>
+				<div class="form-group ">
+					<button class="btn btn-primary" style="width:200px"> Login </button>
+				</div>
+			</form>
+		</div>
+	</div>
+
+
+
+
+	<script>
+		$('.focus-text').focus(function () {
+			$(this).closest('div').addClass('focus-t');
+		})
+		$('.focus-text').blur(function () {
+			if ($('.focus-text').length > 0 && $('.focus-text').val() != '') {
+				$(this).closest('div').addClass('focus-t');
+			}
+			else {
+				$(this).closest('div').removeClass('focus-t');
+			}
+		})
+	</script>
+</body>
+
+</html>

@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../vendors/css/normalize.css">
+    <link rel="stylesheet" type="text/css" href="../vendors/css/grid.css">
+    <link rel="stylesheet" type="text/css" href="../resources/css/style.css">
+    <link rel="stylesheet" type="text/css" href="../resources/css/queries.css">
+    <!-- <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" /> -->
+    <link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,300italic&subset=latin,latin-ext' rel='stylesheet'
+        type='text/css'>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz"
+        crossorigin="anonymous">
+
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/4.4.1/collection/icon/icon.css" rel="stylesheet" type="text/css" />
+
+    <title>Weconnect</title>
+    <style>
+        * {
+            box-sizing: border-box
+        }
+
+        /* Slideshow container */
+        .slideshow-container {
+            height: 500px;
+            position: relative;
+            margin: auto;
+        }
+
+        .mySlides {
+            display: none;
+        }
+
+        /* Next & previous buttons */
+        .prev,
+        .next {
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            width: auto;
+            margin-top: -22px;
+            padding: 16px;
+            color: white;
+            font-weight: bold;
+            font-size: 18px;
+            transition: 0.6s ease;
+            border-radius: 0 20px 20px 0;
+        }
+
+        /* Position the "next button" to the right */
+        .next {
+            right: 0;
+            border-radius: 20px 0 0 20px;
+        }
+
+        /* On hover, add a black background color with a little bit see-through */
+        .prev:hover,
+        .next:hover {
+            background-color: rgba(0, 0, 0, 0.4);
+        }
+
+        /* The dots/bullets/indicators */
+        .dot {
+            cursor: pointer;
+            height: 13px;
+            width: 13px;
+            margin: 0 2px;
+            background-color: #bbb;
+            border-radius: 50%;
+            display: inline-block;
+            transition: background-color 0.6s ease;
+        }
+        
+
+        .active,
+        .dot:hover {
+            background-color: #717171;
+        }
+
+        /* Fading animation */
+        .fade {
+            -webkit-animation-name: fade;
+            -webkit-animation-duration: 1.5s;
+            animation-name: fade;
+            animation-duration: 1.5s;
+        }
+
+        @-webkit-keyframes fade {
+            from {
+                display: block;
+            }
+
+            to {
+                margin: 0;
+            }
+        }
+
+        @keyframes fade {
+            from {
+                opacity: .4
+            }
+
+            to {
+                opacity: 1
+            }
+        }
+
+        .full {
+
+            width: 100vw;
+
+        }
+    </style>
+</head>
+
+<body>
+    <!-- <header id="home" class="eventsheader"> -->
+            <header id="home" class="eventsheader" 
+            style=" background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+            url(<%=detail.event_photo%>);
+          background-position: center;
+          background-size: cover;
+          height: 100vh;">
+        <nav>
+            <div class="row">
+                    <img src="../resources/img/wc.png" alt="logo" class="logo" style="color:black">
+                <ul class="main-nav js--main-nav">
+
+                    <%if(!currentUser){%>
+                    <li><a href="/" class="close">Home</a></li>
+                    <li><a href="/updates" class="close">Updates</a></li>
+                    <li><a href="#gallery" class="close">Gallery</a></li>
+                    <li><a href="#sponsors" class="close">Our &nbsp; Sponsors</a></li>
+                    <li><a href="#event-heads" class="close">Event &nbsp; Heads</a></li>
+                    <li><a href="/sign-up" class="close">Sign &nbsp; Up</a></li>
+                    <li><a href="#log-in" class="close">Log &nbsp; In</a></li>
+                    <%}else{%>
+                    <li><a href="/" class="close">Home</a></li>
+                    <li><a href="/updates" class="close">Updates</a></li>
+                    <li><a href="#gallery" class="close">Gallery</a></li>
+                    <li><a href="#sponsors" class="close">Our &nbsp; Sponsors</a></li>
+                    <li><a href="#event-heads" class="close">Event &nbsp; Heads</a></li>
+                    <li><a href="#">
+                            <%=currentUser.username%></a></li>
+
+                    <li><a href="/logout">Log Out</a></li>
+                    <%}%>
+                </ul>
+                <a class="mobile-nav-icon js--nav-icon"><i class="fas fa-bars"></i></a>
+
+
+
+
+            </div>
+        </nav>
+        
+        <p class="main-heading" style="text-align: center">
+            <%=detail.event_name%>
+        </p>
+        <p class="main-sub-heading" style="text-align: center">
+            <%=detail.event_info%><br>
+            
+        </p>
+        <p class="main-sub-heading1" style="text-align: center">
+                
+                <%=detail.start_dt%><br><br>to<br><br><%=detail.finish_dt%>
+            </p>
+        
+    </header>
+
+
+
+    <div class="row" style="margin-top:50px">
+        <h2>
+            Gallery
+        </h2>
+
+    </div>
+
+    <div class="slideshow-container" id="gallery">
+        <% gallery.forEach(function(m){%>
+        <div class="mySlides fade full">
+            <div style="background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+                    url(<%=m.photo%>);
+                  background-position: center;
+                  background-size: cover;
+                  height: 500px;">
+
+
+
+
+
+            </div>
+        </div>
+        <% })%>
+
+        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+        <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+
+
+    </div>
+
+    <br>
+    <div style="text-align:center">
+        <span class="dot" onclick="currentSlide(1)"></span>
+        <span class="dot" onclick="currentSlide(2)"></span>
+        <span class="dot" onclick="currentSlide(3)"></span>
+        <!-- <span class="dot" onclick="currentSlide(4)"></span> -->
+    </div>
+
+    <section class="sponosrs" id="sponsors">
+        <div class="row">
+            <h2>
+                Our &nbsp; Sponsors
+            </h2>
+
+        </div>
+        <div class="row" style="width:90%">
+            <%sponsor.forEach(function(m){%>
+            <div class="col span-1-of-4 box">
+
+                <img src="<%=m.sponsor_photo%>" class="meals-photo">
+                <div style="margin-top:20px">
+                <h2>
+                       
+                    <%=m.sponsor_name%>
+                </h2>
+                </div>
+            </div>
+            <%})%>
+
+            <!-- <span class="btn btn-full pointer">Read More</span> -->
+        </div>
+    </section>
+    <!-- <section class="section-sponsors">
+
+        <div class="row" style="margin-top:30px;">
+            <h2>
+                Our &nbsp; Sponsors
+            </h2>
+
+        </div>
+
+        <ul class="meals-showcase clearfix">
+            <li>
+                <figure>
+                    <img src="../resources/img/a.JPG" class="meals-photo" />
+                </figure>
+            </li>
+            <li>
+                <figure>
+                    <img src="../resources/img/nikhil1.jpeg" class="meals-photo" />
+                </figure>
+            </li>
+            <li>
+                <figure>
+                    <img src="../resources/img/a.JPG" class="meals-photo" />
+                </figure>
+            </li>
+            <li>
+                <figure>
+                    <img src="../resources/img/nikhil1.jpeg" class="meals-photo" />
+                </figure>
+            </li>
+
+        </ul>
+        <ul class="meals-showcase clearfix">
+            <li>
+                <figure>
+                    <img src="../resources/img/nikhil1.jpeg" class="meals-photo" />
+                </figure>
+            </li>
+            <li>
+                <figure>
+                    <img src="../resources/img/a.JPG" class="meals-photo" />
+                </figure>
+            </li>
+            <li>
+                <figure>
+                    <img src="../resources/img/nikhil1.jpeg" class="meals-photo" />
+                </figure>
+            </li>
+            <li>
+                <figure>
+                    <img src="../resources/img/a.JPG" class="meals-photo" />
+                </figure>
+            </li>
+
+        </ul>
+    </section> -->
+   <section class="meet-the-team" id="event-heads">
+        <div class="row">
+            <h2>
+                Event &nbsp; Heads
+            </h2>
+
+        </div>
+        <div class="row" style="width:90%">
+            <%head.forEach(function(m){%>
+                  
+            <div class="col span-1-of-2 box box1">
+                     
+                <img src="<%=m.head_photo%>" alt="customer" class="team" >
+                    
+                <h2 style="margin-top:65px;">
+                    
+                    <%=m.name%>
+                </h2>
+               
+                <h3>
+                    Contact number:- &nbsp;
+                    <%=m.contact_no%>
+                </h3>
+            </div>
+    
+            <%})%>
+        
+            <!-- <span class="btn btn-full pointer">Read More</span> -->
+        </div>
+    </section>
+
+
+
+
+    <footer>
+            <div class="row">
+    
+            </div>
+            <div class="row">
+    
+                <div class="col span-1-of-2">
+    
+                    <ul class="footer-nav">
+                        <li><a href="/">home</a></li>
+                        <li><a href="/updates">updates</a></li>
+                        
+                    </ul>
+                </div>
+                <div class="col span-1-of-2">
+                    
+                    <!-- <ul class="social-links">
+                        <li><a href="">
+                                <img src="resources/img/facebook.png" />
+                            </a></li>
+                        <li><a><img src="resources/img/instagram.png" style="color:white" /></a></li>
+                    </ul> -->
+                </div>
+            </div>
+            <div class="row">
+                <p>
+                    Copyright &copy; 2018 by WE CONNECT PVT.LTD.
+                </p>
+            </div>
+    
+        </footer>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="../vendors/js/jquery.waypoints.min.js"></script>
+    <script src="../resources/js/script.js"></script>
+    <script src="../resources/js/smooth-scroll.js"></script>
+    <!-- <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+
+
+
+    <script>
+            AOS.init();
+    </script> -->
+    <script>
+        var x = document.getElementById("my-file").value;
+        console.log(x)
+    </script>
+    
+
+</body>
+
+</html>

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../vendors/css/normalize.css">
+    <link rel="stylesheet" type="text/css" href="../vendors/css/grid.css">
+    <link rel="stylesheet" type="text/css" href="../resources/css/style.css">
+    <link rel="stylesheet" type="text/css" href="../resources/css/queries.css">
+    <link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,300italic&subset=latin,latin-ext' rel='stylesheet'
+        type='text/css'>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz"
+        crossorigin="anonymous">
+
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/4.4.1/collection/icon/icon.css" rel="stylesheet" type="text/css" />
+
+    <title>Weconnect</title></head>
+
+<body>
+    <header id="home" class="infohome">
+        <nav>
+            <div class="row">
+                    <img src="../resources/img/wc.png" alt="logo" class="logo" style="color:black">
+            </div>
+        </nav>
+        <div class="signupform">
+            <form method="POST" action="/upload" class="contact" enctype="multipart/form-data">
+                <div class="row">
+                    <div class="col span-1-of-3">
+                        <label for="fname" style="color:white">First Name</label>
+                    </div>
+                    <div class="col span-2-of-3">
+                        <input type="text" name="fname" id="fname" placeholder="Your First Name" width="100%" required>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col span-1-of-3">
+                        <label for="lname" style="color:white">Last Name</label>
+                    </div>
+                    <div class="col span-2-of-3">
+                        <input type="text" name="lname" id="lname" placeholder="Your Last Name" width="100%" required>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col span-1-of-3">
+                        <label for="dob" style="color:white">Date Of Birth</label>
+                    </div>
+                    <div class="col span-2-of-3">
+                        <input type="text" name="dob" id="dob" placeholder="Your Date Of Birth" width="100%" required>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col span-1-of-3">
+                        <label for="phone" style="color:white">Phone</label>
+                    </div>
+                    <div class="col span-2-of-3">
+                        <input type="text" name="phone" id="phone" placeholder="Your Conatact Number" width="100%"
+                            required>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col span-1-of-3">
+                        <label for="gender" style="color:white">Gender</label>
+                    </div>
+                    <div class="col span-2-of-3">
+                        <input type="text" name="gender" id="gender" placeholder="Your Gender" width="100%" required>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col span-1-of-3">
+                        <label for="bio" style="color:white">About You</label>
+                    </div>
+                    <div class="col span-2-of-3">
+                        <textarea name="bio" id="bio" placeholder="Your Message" width="100%"></textarea>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col span-1-of-3">
+                        <label for="pic" style="color:white">Profile Pic</label>
+                    </div>
+                    <div class="col span-1-of-3">
+
+
+
+                        <input name="myImage" id="pic" type="file">
+
+
+
+                    </div>
+
+                </div>
+                <div class="row">
+                    <div class="col span-1-of-3">
+                        <label>&nbsp;</label>
+                    </div>
+                    <div class="col span-2-of-3">
+                        <input type="submit" value="Send it!" class="btn btn-full pointer" style="margin-left:120px;">
+                    </div>
+                </div>
+                <input type="text" name="_gotcha" style="display:none" />
+                <input type="hidden" name="_next" value="https://site.io/thanks.html" />
+            </form>
+        </div>
+    </header>
+
+</body>
+
+</html>

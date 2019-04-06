@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../vendors/css/normalize.css">
+    <link rel="stylesheet" type="text/css" href="../vendors/css/grid.css">
+    <link rel="stylesheet" type="text/css" href="../resources/css/style.css">
+    <link rel="stylesheet" type="text/css" href="../resources/css/queries.css">
+    <link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,300italic&subset=latin,latin-ext' rel='stylesheet'
+        type='text/css'>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz"
+        crossorigin="anonymous">
+
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/4.4.1/collection/icon/icon.css" rel="stylesheet" type="text/css" />
+
+    <title>Weconnect</title></head>
+
+<body>
+    <header id="home" style="color:white">
+        <nav>
+            <div class="row">
+                    <img src="../resources/img/wc.png" alt="logo" class="logo" style="color:black">
+                <ul class="main-nav js--main-nav">
+                    <li><a href="/" class="close">Home</a></li>
+
+                </ul>
+                <a class="mobile-nav-icon js--nav-icon"><i class="fas fa-bars"></i></a>
+
+
+                <!-- <p class="main-heading">wallstreet &nbsp; media &nbsp; house </p> -->
+            </div>
+        </nav>
+        <div class="row" style="width:90%;margin-top:50px; ">
+            <%a.forEach(function(m){%>
+            <div class="col span-1-of-4 box box4">
+
+                <img src=<%=m.url%> alt="customer" class="team1">
+                <h3 style="font-size:30px">
+                    <%=m.fname%> <%=m.lname%>
+                </h3>
+                <p>
+                    <h3 style="color:white">
+                        Email id:- &nbsp;
+                        <%=m.email%></h3>
+                        <h3 style="color:white">Phone Number:- &nbsp; <%=m.phone%></h3>
+                        <h3 style="color:white">About:- &nbsp; <%=m.bio%></h3>
+                        <!-- <h3 style="color:white">Skills:- &nbsp; <%=m.skill%></h3> -->
+                    <!-- <strong><%=m.fname%></strong><br>
+                    <strong><%=m.phone%></strong><br>
+                    <strong><%=m.bio%></strong><br>                     -->
+                   
+                    <a href="/profile/<%=m.email%>" class="btn btn-full" style="font-size:11px">View More</a>
+                </p>
+            </div>
+            <%  })%>
+        </div>
+
+    </header>
+</body>
+
+</html>

@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="description"
+      content="One step solution for indoor events,outdoor events,concerts,festival,online marketing,artist management with
+    best food places in bangalore,best event and party organisers in bangalore and event management.
+    Best marketing for events and party.Bangalore's top party organisers,event managers."
+    />
+    <meta
+      name="keywords"
+      content="party planners in Bangalore, Bangalore event planners, party organisers in Bangalore, Bangalore party organisers,event management companies in bangalore, top event management companies, event management company, event management services, event production, event organisers, luxury wedding planners in bangalore,  corporate events in bangalore,  bangalore event management companies"
+    />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <link rel="icon" type="image/ico" href="../favicon.ico" />
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="../vendors/css/normalize.css"
+    />
+    <link rel="stylesheet" type="text/css" href="../vendors/css/grid.css" />
+    <link rel="stylesheet" type="text/css" href="../resources/css/style.css" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="../resources/css/queries.css"
+    />
+    <link
+      href="http://fonts.googleapis.com/css?family=Lato:100,300,400,300italic&subset=latin,latin-ext"
+      rel="stylesheet"
+      type="text/css"
+    />
+
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/4.4.1/collection/icon/icon.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+
+    <title>Weconnect</title>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+
+      /* Slideshow container */
+      .slideshow-container {
+        height: 500px;
+        position: relative;
+        margin: auto;
+      }
+
+      .mySlides {
+        display: none;
+      }
+
+      /* Next & previous buttons */
+      .prev,
+      .next {
+        cursor: pointer;
+        position: absolute;
+        top: 50%;
+        width: auto;
+        margin-top: -22px;
+        padding: 16px;
+        color: white;
+        font-weight: bold;
+        font-size: 18px;
+        transition: 0.6s ease;
+        border-radius: 0 20px 20px 0;
+      }
+
+      /* Position the "next button" to the right */
+      .next {
+        right: 0;
+        border-radius: 20px 0 0 20px;
+      }
+
+      /* On hover, add a black background color with a little bit see-through */
+      .prev:hover,
+      .next:hover {
+        background-color: rgba(0, 0, 0, 0.4);
+      }
+
+      /* The dots/bullets/indicators */
+      .dot {
+        cursor: pointer;
+        height: 13px;
+        width: 13px;
+        margin: 0 2px;
+        background-color: #bbb;
+        border-radius: 50%;
+        display: inline-block;
+        transition: background-color 0.6s ease;
+      }
+
+      .active,
+      .dot:hover {
+        background-color: #717171;
+      }
+
+      /* Fading animation */
+      .fade {
+        -webkit-animation-name: fade;
+        -webkit-animation-duration: 1.5s;
+        animation-name: fade;
+        animation-duration: 1.5s;
+      }
+
+      @-webkit-keyframes fade {
+        from {
+          display: block;
+        }
+
+        to {
+          margin: 0;
+        }
+      }
+
+      @keyframes fade {
+        from {
+          opacity: 0.4;
+        }
+
+        to {
+          opacity: 1;
+        }
+      }
+      .full {
+        width: 100vw;
+      }
+    </style>
+  </head>
+
+  <body>
+    <header id="careers">
+      <nav>
+        <div class="row">
+          <a href="/"
+            ><img src="resources/img/logo.png" alt="logo" class="logo"
+          /></a>
+          <ul class="main-nav js--main-nav">
+            <li><a href="/" class="close homecareers">Home</a></li>
+          </ul>
+          <div class="hero-text-box">
+            <h1>Join WallStreet Media House</h1>
+          </div>
+          <div class="join-us">
+            <a class="btn btn-full" href="#careers-form">Join Us</a><br />
+            <a class="btn btn-full" href="/">Home</a><br />
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <section class="form" id="careers-form">
+      <div class="row">
+        <h2>Join WallStreet Media House</h2>
+      </div>
+      <div class="row">
+        <form
+          method="POST"
+          action="/upload"
+          class="contact"
+          enctype="multipart/form-data"
+        >
+          <div class="row">
+            <div class="col span-1-of-3">
+              <label for="name">Name</label>
+            </div>
+            <div class="col span-2-of-3">
+              <input
+                type="text"
+                name="name"
+                id="name"
+                placeholder="Your Name"
+                required
+              />
+            </div>
+          </div>
+          <div class="row">
+            <div class="col span-1-of-3">
+              <label for="phone">Phone Number</label>
+            </div>
+            <div class="col span-2-of-3">
+              <input
+                type="text"
+                name="phone"
+                id="phone"
+                placeholder="Phone Number"
+                required
+              />
+            </div>
+          </div>
+          <div class="row">
+            <div class="col span-1-of-3">
+              <label for="email">Email</label>
+            </div>
+            <div class="col span-2-of-3">
+              <input
+                type="email"
+                name="email"
+                id="email"
+                placeholder="Your email"
+                required
+              />
+            </div>
+          </div>
+          <!-- <div class="row">
+                    <div class="col span-1-of-3">
+                        <label for="designation">Designation</label>
+                    </div>
+                    <div class="col span-2-of-3">
+                        <select name="designation" id="designation">
+                            <option value="">Select</option>
+                            <option value="marketing-manager">Marketing Manager</option>
+                            <option value="client-service">Client Service Manager</option>
+                            <option value="graphic-designer">Graphic Designer</option>
+                            social media manager
+                        </select>
+                    </div>
+                </div> -->
+          <div class="row">
+            <div class="col span-1-of-3">
+              <label>Job Skills And Training</label>
+            </div>
+            <div class="col span-2-of-3">
+              <textarea name="skills" placeholder=""></textarea>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col span-1-of-3">
+              <span>Upload Resume</span>
+            </div>
+            <div class="col span-1-of-3">
+              <input name="myImage" type="file" />
+            </div>
+          </div>
+          <div class="row">
+            <div class="col span-1-of-3">
+              <label>&nbsp;</label>
+            </div>
+            <div class="col span-2-of-3">
+              <input
+                type="submit"
+                id="my-file"
+                value="Send it!"
+                class="btn btn-full pointer"
+              />
+            </div>
+          </div>
+        </form>
+      </div>
+    </section>
+    <div class="slideshow-container">
+      <div class="mySlides fade full">
+        <div
+          style="background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+            url(../resources/img/gd.jpg);
+          background-position: center;
+          background-size: cover;
+          height: 500px;"
+        >
+          <h1 class="h1slide">Graphic Designer</h1>
+          <br />
+
+          <p class="long-careers ">
+            WallStreet Media House established in 2018, has stepped into the
+            world of pub and outdoor events. Providing a one-stop solution from
+            event curation, on-ground and online marketing, artist management to
+            D-Day co-ordination and execution, we plan to bring our expertise to
+            make sure our events are to never forget!
+          </p>
+          <a class="btn btn-ghost btncareers" href="#"> Show me more </a>
+        </div>
+      </div>
+
+      <div class="mySlides fade full">
+        <div
+          style="background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+            url(../resources/img/mm.jpg);
+          background-position: center;
+          background-size: cover;
+          height: 500px; "
+        >
+          <h1 class="h1slide">Marketing Manager</h1>
+          <br />
+
+          <p class="long-careers ">
+            WallStreet Media House established in 2018, has stepped into the
+            world of pub and outdoor events. Providing a one-stop solution from
+            event curation, on-ground and online marketing, artist management to
+            D-Day co-ordination and execution, we plan to bring our expertise to
+            make sure our events are to never forget!
+          </p>
+          <a class="btn btn-ghost btncareers" href="#"> Show me more </a>
+        </div>
+      </div>
+
+      <div class="mySlides fade full">
+        <div
+          style="background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+            url(../resources/img/cs.jpg);
+          background-position: center;
+          background-size: cover;
+          height: 500px;"
+        >
+          <h1 class="h1slide">Client Service Manager</h1>
+          <br />
+
+          <p class="long-careers ">
+            WallStreet Media House established in 2018, has stepped into the
+            world of pub and outdoor events. Providing a one-stop solution from
+            event curation, on-ground and online marketing, artist management to
+            D-Day co-ordination and execution, we plan to bring our expertise to
+            make sure our events are to never forget!
+          </p>
+          <a class="btn btn-ghost btncareers" href="#"> Show me more </a>
+        </div>
+      </div>
+      <!-- <div class="mySlides fade full">
+            <div style="background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+            url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTyG--MMErPnLT0K5DcgdHJDfd2w0vOCtfE275GXKOCPtT7T_KH2Q);
+          background-position: center;
+          background-size: cover;
+          height: 500px;">
+            </div>
+        </div> -->
+
+      <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+      <a class="next" onclick="plusSlides(1)">&#10095;</a>
+    </div>
+    <br />
+
+    <div style="text-align:center">
+      <span class="dot" onclick="currentSlide(1)"></span>
+      <span class="dot" onclick="currentSlide(2)"></span>
+      <span class="dot" onclick="currentSlide(3)"></span>
+      <!-- <span class="dot" onclick="currentSlide(4)"></span> -->
+    </div>
+
+    <section class="find-jobs"></section>
+
+    <div class="full" style="background-color:green"></div>
+    <footer>
+      <div class="row"></div>
+      <div class="row">
+        <div class="col span-1-of-2">
+          <ul class="footer-nav">
+            <li><a href="/">Home</a></li>
+            <li><a href="/careers">Careers</a></li>
+          </ul>
+        </div>
+        <div class="col span-1-of-2">
+          <a href="/"
+            ><img src="resources/img/logo.png" alt="logo" class="logo-footer"
+          /></a>
+          <!-- <ul class="social-links">
+                        <li><a href="">
+                                <img src="resources/img/facebook.png" />
+    
+                            </a></li>
+                        <li><a><img src="resources/img/instagram.png" style="color:white" /></a></li>
+                    </ul> -->
+        </div>
+      </div>
+      <div class="row">
+        <p>
+          Copyright &copy; 2018 by WALLSTREET MEDIA HOUSE PVT.LTD.
+        </p>
+      </div>
+    </footer>
+    <script
+      src="https://code.jquery.com/jquery-3.2.1.min.js"
+      integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="../vendors/js/jquery.waypoints.min.js"></script>
+    <script src="../resources/js/script.js"></script>
+    <script src="../resources/js/smooth-scroll.js"></script>
+    <script>
+      var x = document.getElementById("my-file").value;
+      console.log(x);
+    </script>
+  </body>
+</html>
